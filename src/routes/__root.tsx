@@ -26,28 +26,26 @@ function RootComponent() {
   return (
     <>
       <header className="flex sticky h-16 shrink-0 items-center justify-between gap-2 mb-4 border-b px-4">
-        <div className="p-2 flex gap-4 items-center">
-          <h1 className="text-3xl font-bold">Sui Blockchain</h1>
-          <nav className="flex gap-2 text-lg items-center">
-            <Link
-              to="/"
-              activeProps={{
-                className: "font-bold",
-              }}
-              activeOptions={{ exact: true }}
-            >
-              Mint NFT
-            </Link>{" "}
-            <Link
-              to="/upload"
-              activeProps={{
-                className: "font-bold",
-              }}
-            >
-              Walrus
-            </Link>{" "}
-          </nav>
-        </div>
+        <h1 className="text-3xl font-bold">Sui dApp</h1>
+        <nav className="flex gap-4 text-lg items-center">
+          <Link
+            to="/"
+            activeProps={{
+              className: "font-bold",
+            }}
+            activeOptions={{ exact: true }}
+          >
+            Mint
+          </Link>{" "}
+          <Link
+            to="/upload"
+            activeProps={{
+              className: "font-bold",
+            }}
+          >
+            Walrus
+          </Link>{" "}
+        </nav>
         <ConnectButton />
       </header>
 
