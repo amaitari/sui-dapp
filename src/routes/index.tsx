@@ -22,6 +22,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { isValidSuiAddress } from "@mysten/sui/utils";
 import { SuiObjectData } from "@mysten/sui/client";
 import { cn } from "@/lib/utils";
+import { useQueryClient } from "@tanstack/react-query";
 
 // Replace with your package ID and module name
 const PACKAGE_ID =
@@ -57,6 +58,7 @@ function Index() {
     SuiObjectData | null | undefined
   >(null);
   const [isTransferValid, setIsTransferValid] = React.useState(false);
+  const queryClient = useQueryClient();
 
   const currentAccount = useCurrentAccount();
   const {
@@ -100,7 +102,7 @@ function Index() {
       },
       {
         onSuccess: async () => {
-          refetch();
+          queryClient.invalidateQueries();
           setMintFields({ name: "", description: "", url: "" });
         },
         onError(error) {
@@ -136,7 +138,7 @@ function Index() {
       },
       {
         onSuccess: async () => {
-          refetch();
+          queryClient.invalidateQueries();
           setSelectedNFT(null);
           setTransferAddress("");
           setIsTransferValid(false);
