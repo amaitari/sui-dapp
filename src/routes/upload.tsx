@@ -120,7 +120,7 @@ function Upload() {
     const blobUrl = `${aggregatorUrl}/v1/${storageInfo.blobId}`;
     const suiUrl = `${storageInfo.suiBaseUrl}/${storageInfo.suiRef}`;
     const isImage = mediaType.startsWith("image");
-    console.log("🚀 ~ displayUpload ~ mediaType:", mediaType)
+    console.log("🚀 ~ displayUpload ~ mediaType:", mediaType);
 
     console.log("🚀 ~ displayUpload ~ :", {
       ...storageInfo,
@@ -183,10 +183,10 @@ function Upload() {
             </div>
 
             <div className="mb-4">
+              <Label htmlFor="email">Epochs</Label>
               <Input
                 id="epochs-input"
                 type="number"
-                // label="Epochs"
                 min={1}
                 value={epochs}
                 onChange={(e) => setEpochs(Number(e.target.value))}
